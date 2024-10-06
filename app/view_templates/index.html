@@ -1,0 +1,41 @@
+<!-- app/view_templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load common head content, including the favicon link -->
+    {% include "./partials/head.html" ignore missing with context %}
+    <title>Home Page</title>
+</head>
+
+<body>
+    <!-- Include navbar from partials -->
+    {% include "./partials/nav.html" ignore missing with context %}
+
+    <h1>Dynamic content</h1>
+
+    <!-- Block to display server time -->
+    <div class="timeBlock">
+        <h3>Server Time:</h3>
+        <h4 id="serverTime">{{ serverTime }}</h4>
+    </div>
+
+    <!-- Block to display browser time -->
+    <div class="timeBlock">
+        <h3>Browser Time:</h3>
+        <h4 id="browserTime">--:--:--</h4> <!-- Placeholder for client-side time -->
+    </div>
+
+    <!-- Include the browserTime.js script -->
+    <script src="/static/js/browserTime.js"></script>
+
+    <!-- Load common CSS and JS -->
+    {% include "./partials/dependencies.html" ignore missing with context %}
+</body>
+
+</html>
+
+
+

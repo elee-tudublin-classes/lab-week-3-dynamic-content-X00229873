@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "./partials/head.html" ignore missing with context %}
+    <title>NASA APOD</title>
+</head>
+<body>
+    {% include "./partials/nav.html" ignore missing with context %}
+
+    <h1>{{ data.title }} - {{ data.date }}</h1> <!-- Display the title and date -->
+    <p>{{ data.explanation }}</p>
+
+    <!-- Check if the media type is an image before displaying -->
+    {% if data.media_type == "image" %}
+        <img src="{{ data.url }}" alt="{{ data.title }}" class="img-fluid">
+    {% elif data.media_type == "video" %}
+        <iframe src="{{ data.url }}" frameborder="0" allowfullscreen></iframe>
+    {% endif %}
+
+    {% include "./partials/dependencies.html" ignore missing with context %}
+</body>
+</html>
+
