@@ -11,9 +11,6 @@ from starlette.config import Config
 # Load environment variables from .env
 config = Config(".env")
 
-# Create Config instance for future-proofing environment variable access
-config = Config(".env")
-
 # Define the lifespan context manager
 @asynccontextmanager
 async def lifespan(app: FastAPI):
