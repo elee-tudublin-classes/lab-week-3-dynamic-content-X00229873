@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "./partials/head.html" ignore missing with context %}
+    <title>Advice</title>
+</head>
+<body>
+    {% include "./partials/nav.html" ignore missing with context %}
+
+    <h1>Advice</h1>
+    <div class="alert alert-info" role="alert">
+        <p>{{ data.slip.advice }}</p>
+    </div>
+
+    {% include "./partials/dependencies.html" ignore missing with context %}
+</body>
+</html>

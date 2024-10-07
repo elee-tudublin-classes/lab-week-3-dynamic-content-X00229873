@@ -1,0 +1,31 @@
+<!-- app/view_templates/params.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load common head content, including the favicon link -->
+    {% include "./partials/head.html" ignore missing with context %}
+    <title>Parameters</title>
+</head>
+
+<body>
+    <!-- Include navbar from partials -->
+    {% include "./partials/nav.html" ignore missing with context %}
+
+    <!-- Show welcome message -->
+    <h1>Welcome {{ name }}</h1>
+
+    <!-- If name value is missing, show instructions -->
+    {% if name == "" %}
+    <h4>Try changing the URL to /params?name=your_name</h4>
+    {% endif %}
+
+    <!-- Load common CSS and JS -->
+    {% include "./partials/dependencies.html" ignore missing with context %}
+</body>
+
+</html>
+
+
